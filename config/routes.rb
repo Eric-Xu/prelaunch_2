@@ -1,4 +1,8 @@
 Prelaunch2::Application.routes.draw do
+  get "users/new"
+
+  get "users/index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

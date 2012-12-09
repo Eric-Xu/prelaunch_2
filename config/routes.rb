@@ -1,7 +1,8 @@
 Prelaunch2::Application.routes.draw do
-  get "users/new"
+  root to: 'users#new'
+  match '/thankyou', to: 'users#index'
 
-  get "users/index"
+  resources :users, only: [:new, :create, :index]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

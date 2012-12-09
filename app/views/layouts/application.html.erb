@@ -2,11 +2,20 @@
 <html>
   <head>
     <title><%= full_title(yield(:title)) %></title>
-    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= stylesheet_link_tag    "application", media: "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
+    <%= render 'layouts/shim' %>
+    <script type="text/javascript" src="http://mbostock.github.com/d3/d3.v2.js"></script>
   </head>
   <body>
-    <%= yield %>
+    <%= render 'layouts/header' %>
+    <div class="container">
+      <%= yield %>
+      <p id="chart">
+        <%= render 'layouts/svg' %>
+      </p>
+      <%= debug(params) if Rails.env.development? %>
+    </div>
   </body>
 </html>

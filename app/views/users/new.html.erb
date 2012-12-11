@@ -1,15 +1,34 @@
 <% provide(:title, 'Sign up') %>
 <div class="center hero-unit">
-  <h1>Welcome to the Sign up page</h1>
+  <h1>Welcome to the <span style="color:#0073cc;">Sign up</span> page</h1>
   <h2>This is the home page, as well as the users sign up page.</h2>
 </div>
 
 <div class="row">
-  <div class="span4 offset2">
+  <div class="span4 offset2 text-only">
   	<p>We're fanatical about the speed of our service. To ensure a great experience for all of our users we're inviting people on a rolling basis. Enter your name and email to the right and we'll keep you posted on our progress. We'll get you your invite as soon as we can!</p>
   </div>
-  <div class="span4">
-    <p>Launching soon.</p>
 
-    <p>No spam. Just a heads up when we're ready for you.</p>  </div>
+  <div class="span4">
+  	<div class="form-inline">
+	  <%= form_for(@user) do |f| %>
+		  <label style="display: <%= "#{@user.errors.any? ? 'none' : 'block'}" %>;">Launching soon.</label>
+
+	      <%= render 'shared/error_messages' %>
+
+	      <div class="input-prepend">
+	      	<span class="add-on"><i class="icon-user"></i></span>
+	        <%= f.text_field :name, placeholder: "Your name..." %>
+	      </div>
+	      <div class="input-prepend">
+	      	<span class="add-on"><i class="icon-envelope"></i></span>
+	        <%= f.text_field :email, placeholder: "Your email address..." %>
+	      </div>
+	      <%= f.submit "Notify Me", class: "btn btn-primary" %>
+	    <% end %>
+
+	    <p class="help-block">No spam. Just a heads up when we're ready for you.</p>
+    
+    </div>
+  </div>
 </div>

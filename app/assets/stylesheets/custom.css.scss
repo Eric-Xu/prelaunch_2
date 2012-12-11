@@ -28,6 +28,10 @@ textarea {
   resize: vertical;
 }
 
+p {
+  padding-right: 20px;
+}
+
 .center {
   text-align: center;
   h1 {
@@ -57,11 +61,6 @@ h2 {
   color: #999;
 }
 
-p {
-  font-size: 1.1em;
-  line-height: 1.7em;
-}
-
 /* header */
 
 #logo {
@@ -82,8 +81,21 @@ p {
 
 /* forms */
 
-input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
+label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #0073CC;
+}
+  
+.input-prepend, .btn{
+  margin-top: 10px;
+  width: 300px;
+}
+
+.help-block {
+  font-size: 10px;
+  color: gray;
+  margin-top: 15px;  
 }
 
 #error_explanation {
@@ -97,7 +109,7 @@ input, textarea, select, .uneditable-input {
 .field_with_errors {
   @extend .control-group;
   @extend .error;
- }
+}
  
 /* svg */
 

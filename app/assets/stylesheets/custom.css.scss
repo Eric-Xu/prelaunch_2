@@ -32,10 +32,12 @@ p {
   padding-right: 20px;
 }
 
+
 .center {
   text-align: center;
+  padding: 40px 55px;
   h1 {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
 }
 
@@ -54,11 +56,14 @@ h1 {
 
 h2 {
   font-size: 1.7em;
-  letter-spacing: -1px;
-  margin-bottom: 30px;
-  text-align: center;
   font-weight: normal;
   color: #999;
+  padding: 0px 80px;
+  line-height: 110%;
+  text-align: left;
+  p {
+    margin-bottom: 10px;
+  }
 }
 
 /* header */
@@ -87,15 +92,14 @@ label {
   color: #0073CC;
 }
   
-.input-prepend, .btn{
+.input-prepend, .btn {
   margin-top: 10px;
   width: 300px;
 }
 
 .help-block {
   font-size: 10px;
-  color: gray;
-  margin-top: 15px;  
+  color: gray; 
 }
 
 #error_explanation {
@@ -109,13 +113,15 @@ label {
 .field_with_errors {
   @extend .control-group;
   @extend .error;
+  display: inline; /* to prevent the div wrapper from being pushed to a new line. */
 }
  
 /* svg */
 
 svg {
   font: 10px sans-serif;
-}  
+}
+
 .line {
   fill: none;
   stroke: #000;
